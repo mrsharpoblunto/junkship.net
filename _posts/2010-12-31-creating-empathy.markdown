@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Creating empathy"
+date: 2010-12-31 06:12:19
+tags:
+- design
+- storytelling
+---
+
+Here's a few thoughts of mine regarding player empathy in games. Its an old essay but I had forgotten about it until today when I did a clean out of my documents folder.
+
+If a player is not involved in the emotional experience of a game and is instead seeing through to the machinery holding the game together, their actions become focused on beating the game and maximizing benefit to the character in the short term while disregarding the experience as a whole. The irony of this situation is that a linear medium can offer a greater emotional involvement as the player is railroaded into a particular experience. However this ignores the greatest aspect of interactive storytelling, namely for the player to shape the story as they see fit. 
+
+Due to the difficulties involved in creating truly meaningful non-linear storylines, designers cheat by commonly creating a set number of points in a story which diverge from the main story arc and give the illusion of non-linearity. However if the key decision points are noticeable by the player then the player will objectively weigh the decisions at a mechanical level removing them at an emotional level. For example given the choice between an easy and a hard path, players will often avoid the harder path, even if it means going against their opinions regarding the in-game events. As a designer it should be the goal to get the players involved in the story to the point where their emotions blind them to their &quot;gamer sensibilities&quot; in order to get them to take that hard path because they think its the &quot;right&quot; thing to do given the context of the story. 
+
+One way to stop the player viewing non-linear progression as a mechanical choice is to disguise the choice in such a way that the player cannot objectively make a choice outside of the context offered by the storyline itself. Simply put, if the player doesn't see a &quot;this makes my character evil +1&quot; type decision they are more likely to make a decisions based at a truer emotional level. So what tools does a designer have available to them to aid in this process? 
+
+One such approach taken by Indigo prophecy is a time based approach. Dialog in Indigo prophecy is time based, the player has a limited time to make a decision on what to say, meaning they can't dwell on the consequences of their decisions and instead have to make instinctive decisions. This time based approach to revealing a players personality could be extended further to events in the game world, for example: As a character in a collapsing mine shaft you are escaping with two other NPC's. up ahead is a T intersection, one NPC goes one way, one NPC goes the other... who do you follow, if you hesitate you die - therefore you must make a spur of the moment decision. 
+
+The other approach is one taken by Final Fantasy VII with the gold saucer &quot;date&quot; sequence which I dub the &quot;accumulative&quot; approach. Throughout the earlier parts of the game the player is presented with a large number of seemingly unimportant decisions that are used by the game to evaluate which NPC you like the most. Then at the date scene that &quot;favored&quot; NPC takes part with you in a &quot;date&quot;. This effectively reveals a players true preference through decisions which the player does not link to any important consequence, so they make them instinctively. Then at the point where a large decision has to be made, the game makes the choice based on the past decisions, denying the player an opportunity to jump out of character. 
+
+These two approaches work at very different time scales, and are useful for different situations. However the &quot;accumulative&quot; method is far more subtle and due to the fact that the decisions are spread throughout the game, the player cannot just reload and try the other option (which is possible with the timed decision approach). For this reason the accumulative method should be employed in situations where the player is most likely to try and &quot;game&quot; the system, as it essentially forces them to do what subconsciously they actually want to do. However, the accumulative method should be used with caution as the designer has to be sure that the intermediary decisions actually reveal the players mindset and preferences, otherwise the crucial decisions made by the game will appear frustrating or arbitrary to the player.

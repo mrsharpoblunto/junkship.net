@@ -1,0 +1,17 @@
+# Site settings
+title: Junkship
+email: glenn.conner@junkship.net
+description: > # this means to ignore newlines until "baseurl:"
+    Junkship is a game about being an interplanetary arms dealer. You can design, build, and sell any weapon you can imagine. Will you use your skills to help ensure peace? Or will you play one side off against the other to keep the wars (and contracts) coming? 
+#baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://junkship.net" # the base hostname & protocol for your site
+twitter_username: mr_sharpoblunto
+github_username:  mrsharpoblunto
+permalink: /News/:year/:month/:day/:title.html
+paginate: 5 
+paginate_path: "/page:num"
+timezone: UTC
+gems: 
+- jekyll-redirect-from
+# Build settings
+markdown: kramdown

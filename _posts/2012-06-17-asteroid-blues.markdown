@@ -9,7 +9,7 @@ tags:
 
 Its been a while since the last blog post, however it doesn't mean that nothing has been happening - quite the opposite, the amount of ongoing work has left no time to keep the blog up to date. I really should try and keep the posts coming on a regular basis or I find myself in my current situation with a massive backlog of things to write up, to help with this I’ve started to use [trello](http://trello.com) to keep my work organized – so we’ll have to see how that works out .
 
-So anyway, as promised here’s a dev diary on generating and rendering procedural asteroid fields. The basic idea for this was to use [similar techniques I’ve used in the past](http://junkship.net/News/2011/11/13/building-steam-with-a-grain-of-salt) to generate planetary textures using [perlin noise](http://en.wikipedia.org/wiki/Perlin_noise) to generate color and normal maps, but instead of applying it to a sphere applying it to some arbitrary (or seemingly arbitrary) geometry.
+So anyway, as promised here’s a dev diary on generating and rendering procedural asteroid fields. The basic idea for this was to use [similar techniques I’ve used in the past](/News/2011/11/13/building-steam-with-a-grain-of-salt) to generate planetary textures using [perlin noise](http://en.wikipedia.org/wiki/Perlin_noise) to generate color and normal maps, but instead of applying it to a sphere applying it to some arbitrary (or seemingly arbitrary) geometry.
 
 In my case I decided to use a sphere as the base for the asteroids geometry as opposed to using some combination of 3d noise and [marching cubes](http://en.wikipedia.org/wiki/Marching_cubes). The reasons for this were twofold, firstly the sphere based approach was much simpler, and secondly most asteroids are vaguely spherical in shape anyway. Given a sphere its a relatively simple matter to use a 3d perlin noise function to move the spheres vertices up or down their normals in order to generate smooth deformations in the sphere surface.
 
@@ -17,13 +17,13 @@ I ran into some initial problems with this approach however as I was using the b
 
 &#160;
 
-[![image](http://www.junkship.net/Resources/News/uDKJiLX2Mkmg2Mz_iZggLQ.png "image")](http://www.junkship.net/Resources/News/VRNcvrUKnEGi3qy9QJi69w.png)
+![image](/assets/images/news/VRNcvrUKnEGi3qy9QJi69w.jpg)
 
 On the left, an icosphere – On the right, a sphere built up using strips.
 
 &#160;
 
-[![image](http://www.junkship.net/Resources/News/_v5J_15ISU-6MYgYMPc07A.png "image")](http://www.junkship.net/Resources/News/ODJTUvqRk0K1egbXk4xjXg.png)
+![image](/assets/images/news/ODJTUvqRk0K1egbXk4xjXg.jpg)
 
 An initial render of the asteroid geometry using the skin from an earthlike planet.
 
@@ -31,6 +31,6 @@ An initial render of the asteroid geometry using the skin from an earthlike plan
 
 Rendering a single asteroid is one thing, but in order to create a convincing asteroid FIELD, its necessary to render hundreds or thousands of asteroids. In order to make this performant I utilized hardware instancing to re-use the same asteroid object, but to apply thousands of different rotation/scale/translation matrices in order to give the appearance of many different asteroids without the overheads of having thousands of unique textures and models. In practice I could use a handful of models and textures rather than just one to increase the variety a bit, but even as is the results are pretty good.
 
-[![image](http://www.junkship.net/Resources/News/v1x8AiAZu0iSB-BaB2lRKA.png "image")](http://www.junkship.net/Resources/News/1ndyy2-h3UiSWmjrkkov3A.png)
+![image](/assets/images/news/1ndyy2-h3UiSWmjrkkov3A.jpg)
 
-[![image](http://www.junkship.net/Resources/News/LhEHqNdFykq6jFG-wJhs2A.png "image")](http://www.junkship.net/Resources/News/SNpliV_gOUCzhuC5TDldcw.png)
+![image](/assets/images/news/SNpliV_gOUCzhuC5TDldcw.jpg)

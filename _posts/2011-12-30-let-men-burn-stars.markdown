@@ -6,8 +6,6 @@ date: 2011-12-30 01:12:33
 
 As promised last post, here’s a brief dev diary entry on creating random starfields and nebulas. After generating a passable looking planet the next step is to generate some cool looking&#160; space for the planet to exist inside, and for that you need a couple of things. 
 
-&#160;
-
 Firstly you need a starfield. for this I created a spherical point cloud of star sprites centred about the camera. Getting a good even distribution of stars was a little trickier than I first thought it would be but I found a good algorithm for evenly distributing points about a sphere as shown below
  
 {% highlight c++ %}

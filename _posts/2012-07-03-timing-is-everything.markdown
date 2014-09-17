@@ -10,7 +10,8 @@ tags:
 ![02-07-2012](http://www.junkship.net/Resources/News/rq69DnxxPkKB9MhX7-1f6g.jpg)
 
 According to [Donald Knuth](http://en.wikipedia.org/wiki/Donald_Knuth) 
-  > We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil  
+
+ > We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil  
 
 Now this seems like sage wisdom, and its wisdom I agree with, however in practice I’ve found that if you begin a project without thinking at all about the performance considerations of your design decisions, you’ll come to regret it later. After you get annoyed at how slow things are, you’ll decide to do some optimizin’ and you get a couple of low hanging fruit out of the way but then quickly find that there are no more hot-spots left, but the program still performs horribly because of numerous small architectural problems. So how does one reconcile getting the important things done and not getting bogged down by excessive optimization, but also ensure that your program isn’t carrying the weight of accumulated poor decisions? 
 

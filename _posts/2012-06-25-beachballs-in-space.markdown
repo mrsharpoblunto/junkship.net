@@ -7,17 +7,13 @@ tags:
 - proceduralcontent
 ---
 
-Heres a quick post on how I elaborated on a technique I first saw used by [Paul Whigham](http://johnwhigham.blogspot.com/2011/11/gas-giants.html) to simulate whirling vortices on gas planets. I wont go into huge depth explaining the technique as he has already done a great job of doing so, but essentially the technique involves creating a number of cones which protrude from the center of a sphere outward. Each of these cones represents a conical surface detail. One then renders a [voronoi](http://en.wikipedia.org/wiki/Voronoi_diagram) diagram on the surface of the sphere mapping out for each pixel which cone is closest and encoding this into the textures RGBA data.
+Heres a quick post on how I elaborated on a technique I first saw used by [Paul Whigham](http://johnwhigham.blogspot.com/2011/11/gas-giants.html) to simulate whirling vortices on gas planets. I wont go into huge depth explaining the technique as he has already done a great job of doing so, but essentially the technique involves creating a number of cones which protrude from the center of a sphere outward. Each of these cones represents a conical surface detail. One then renders a [voronoi](http://en.wikipedia.org/wiki/Voronoi_diagram) diagram on the surface of the sphere mapping out for each pixel which cone is closest and encoding this into the textures RGBA data (as shown below).
 
 ![image](/assets/images/news/2y3UmdweF0y0akK1yMXJ2Q.jpg)
-
-<font size="2">Beachballs in space - An example of a cube mapped voronoi diagram</font>
 
 Once this map is rendered, when rendering the object in the pixel shader one can then determine the strength of the nearest cone by sampling the voronoi map texture, and use this to offset the texture lookup to produce a whirl effect.
 
 ![image](/assets/images/news/gAp_qj_M40iNI1l6ebuPZw.jpg)
-
-<font size="2">A gas planet without diffuse lighting to better illustrate the whirl surface effect</font>
 
 Whigham doesn’t go into detail as to how to calculate this offset, so in the interest of helping others out, here’s the relevant pieces of HLSL that I came up with.
 
@@ -61,7 +57,5 @@ float3 adjustedPosition = whirlPosition - (theta>0 ? RotateAboutAxis(difference,
 I also found that this technique can be used for any roughly circular surface details. One such is case is generating impact craters on the surface of rocky planets. The general process is the same, except that instead of rotating texture lookups, one uses the voronoi map to adjust the heightmap data to produce circular surface indentations.
 
 ![image](/assets/images/news/WY0-d8lDykqqOpiNIKQG2A.jpg)
-
-<font size="2">The craters in this image are produced by using a voronoi map to adjust the heightmap.</font>
 
 There are a bunch of other uses I can see this technique being useful for such as adjusting the strength of night time lightmaps on planetary surfaces to create cities, or varying diffuse colors on procedural planetary textures to create ‘biome’ type effects.

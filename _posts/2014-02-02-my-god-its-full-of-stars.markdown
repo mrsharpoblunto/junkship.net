@@ -106,7 +106,7 @@ void main( uint3 dispatchId : SV_DispatchThreadID )
         srcParticleBuffer[id] = p;
     }
 }
-{% endhightlight %}
+{% endhighlight %}
  
 The particle simulation when suitably tweaked came up with all sorts of interesting looking nebula type clouds, and worked well for rendering fields of stars. However as you can see in the screenshot above, even with a lot of blur applied to the particles, when rendering a cloud of point sprites they had kind of a lumpy appearance that gave away the fact that the cloud was actually composed of a finite number of particles. I tried all sorts of variations of increased blur, low pass filters, different particle sizes and shapes but the lumpiness was always present to some degree
 

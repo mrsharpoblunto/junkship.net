@@ -21,7 +21,7 @@ Once this map is rendered, when rendering the object in the pixel shader one can
 
 Whigham doesn’t go into detail as to how to calculate this offset, so in the interest of helping others out, here’s the relevant pieces of HLSL that I came up with.
 
-{% higlight c %}
+{% highlight c %}
 //rotates a vector about an arbitrary axis
 
 float3 RotateAboutAxis(in float3 v,in float angle,in float3 axis)

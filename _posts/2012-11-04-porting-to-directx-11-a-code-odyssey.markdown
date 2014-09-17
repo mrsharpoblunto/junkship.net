@@ -49,7 +49,7 @@ If you weren’t already, compile your shaders offline using the FXC compiler su
 
 In Junkship I used the DX9 point sprites feature to render the background starfield, in DX11 the point sprites feature has been removed so to get the equivalent functionality you have two choices – Object instancing or geometry shaders. To get a point sprite effect using object instancing involves creating two vertex buffers – the first being a quad, the other being a matrix transform defining how to orient that quad for every sprite you wish to display. To render the sprites, you would then use a pixel shader which draws a texture over the quad, and using the [ID3D11DeviceContext::DrawIndexedInstanced](http://msdn.microsoft.com/en-us/library/windows/desktop/ff476410%28v=vs.85%29.aspx) method will ensure that the sprite will be drawn for every orientation specified in the second vertex buffer. The other option (the one I chose) was to use a Geometry shader. Geometry shaders are a relatively new type of shader (introduced in DX10) which allow the GPU to generate new vertices in addition to those supplied via the usual vertex buffers. To render billboard style point sprites (sprites that always face the camera) you will need to supply all the positions of the point sprites in a vertex buffer, then in a geometry shader create 4 vertices about this position that exist on a plane that the position-&gt;camera vector is normal to (the HLSL code for this is shown below) Once this is done you should be able to use the same pixel shader as used by the instanced object technique.
 
-{% higlight c %}
+{% highlight c %}
 [maxvertexcount(4)] // point sprite quad, so 4 vertices
 
 void main(point Starfield_VSOutput input[1],inout TriangleStream<Starfield_GSOutput> stream)

@@ -43,7 +43,7 @@ dxsetup.exe /silent
 It is critical that you use the /silent argument as this prevents the DirectX installer UI popping up during your own install. Don’t worry if the user already has the prerequisites, the dxsetup program is smart enough to not install anything that is already installed.
 
 Here’s an example from Junkship’s [nsis](http://nsis.sourceforge.net/Main_Page) installer script which does the DirectX install
-{% highlight %}
+<pre>
 ;--------------------------------
 ; install directx11 update
 Section "Install Directx 11 June 2010 update"
@@ -57,7 +57,7 @@ Section "Install Directx 11 June 2010 update"
     SetOutPath $TEMP
     RMDIR /r $TEMP\Junkship\dxredist
 SectionEnd
-{% endhighlight %}
+</pre>
 
 ### Step 4 – Profit!
 

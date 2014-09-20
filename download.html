@@ -1,0 +1,70 @@
+---
+layout: default
+redirect_from: /Download/index.html
+redirect_from: /Contact/index.html
+title: Junkship - Download
+---
+
+<div class="row download">
+    <div class="col-md-12">
+        <div class="content">
+        <div class="jumbotron">
+            <h1>Download the technology preview</h1>
+            <p>Junkship is still under development, but you can download an early technology preview to play around with. You will need a Windows 7 or newer operating system with a DirectX 11 compatible GPU to run the preview.</p>
+            <p class="text-center"><a class="btn btn-primary btn-lg" role="button" onclick="var that=this;_gaq.push(['_trackEvent','Download','Tech preview',this.href]);setTimeout(function(){location.href=that.href;},200);return false;" href="https://s3.amazonaws.com/junkship.net/JunkshipSetup.exe"><span class="glyphicon glyphicon-cloud-download"></span> Download</a></p>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row download">
+    <div class="col-md-6">
+        <div class="content" id="notify">
+            <h2><span class="glyphicon glyphicon-envelope"></span> Let me know when its done</h2>
+            <p>Junkship isn't finished yet, but we can let you know when it is. Enter your email below and we'll contact you when theres a game you can actually play! (No spam we promise)</p>
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <button type="button" id="notify-button" class="btn btn-default">Notify me</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div id="mgdf">
+            <p><img src="/assets/images/layout/MGDF.jpg" alt="MGDF" style="width:100%"/></p>
+            <div class="content">
+                <p><h3>Powered by Open source!</h3></p>
+                <p>Junkship is built on the open source Matchstick Game Development Framework (MGDF). To find out more about MGDF including how to use if for developing your own games, go to <a href="http://www.matchstickframework.org">http://www.matchstickframework.org</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $(document).ready(function() {
+            $('#notify-button').click(function(e) {
+                e.preventDefault();
+                var email = $('#email').val();
+                if (email === "") {
+                    $('#email').parent().addClass('has-error');
+                } else {
+                    $.ajax({ 
+                    url: 'http://api.junkship.net/notify',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    data: JSON.stringify({ Email: email }),
+                    success:function(response) {
+                        if (response.Success) {
+                            $("#notify form").remove();
+                            $("#notify").append("<div class='alert alert-success' role='alert'><strong>Thanks!</strong> We'll be in touch</div>");
+                        }
+                    },
+                    crossDomain:true});
+                }
+            });
+        });
+    });
+</script>

@@ -34,8 +34,15 @@ section
 
 .content 
 {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
+}
+
+.byline
+{
+    background: #222;
+    color: #fff;
+    text-shadow: 0px 0px 2px #000;
+    padding: 5px 0px 5px 20px;
 }
 
 #stars
@@ -79,6 +86,7 @@ section
     .container 
     {
         margin-top: 0px;
+        box-shadow: none;
     }
      
     #planets, #asteroids, #stars {
@@ -91,6 +99,10 @@ section
     margin-bottom: 0px;
 }
 
+.navbar a {
+    outline: 0;
+}
+
 .navbar-default
 {
     background-image: none;
@@ -98,11 +110,12 @@ section
     box-shadow: none;
     border: none;
     background-color: rgba(0,0,0,0.7);
+    height: 86px;
 }
 
 .nav-extra
 {
-	display: none !important;
+    display: block !important;
 }
 
 .navbar-brand
@@ -123,6 +136,16 @@ section
 	text-indent:-9999px;
 }
 
+#nav-twitter
+{
+    background: url(/assets/images/twitter.png) no-repeat 0 0;
+}
+
+#nav-rss
+{
+    background: url(/assets/images/rss.png) no-repeat 0 0;
+}
+
 ul.navbar-nav li a
 {
     margin-right: 10px;
@@ -135,8 +158,19 @@ ul.navbar-nav li a
     font-size: 21px;
 }
 
+ul.navbar-nav
+{
+    margin-top: 50px;
+}
+
 @media (max-width: 767px)
 {
+    
+    .nav-extra
+    {
+        display: none !important;
+    }
+
     .navbar-default
     {
         height: auto;
@@ -150,36 +184,9 @@ ul.navbar-nav li a
 
     ul.navbar-nav
     {
+        margin-top: auto;
         margin-left: 10px;
     }
-}
-
-@media (min-width:768px)
-{
-    .navbar-default
-    {
-        height: 86px;
-    }
-
-    ul.navbar-nav
-    {
-        margin-top: 50px;
-    }
-
-	.nav-extra
-	{
-		display: block !important;
-	}
-
-	#nav-twitter
-	{
-		background: url(/assets/images/twitter.png) no-repeat 0 0;
-	}
-
-	#nav-rss
-	{
-		background: url(/assets/images/rss.png) no-repeat 0 0;
-	}
 }
 
 
@@ -194,15 +201,24 @@ ul.navbar-nav li a
 }
 
 /** gallery styles */
-.carousel {
+
+.gallery #gallery-carousel {
     margin: 20px;
 }
 
-/** blog post styles */
-
-.label {
-    font-weight: normal;
+.gallery #gallery-carousel img 
+{
+    margin:0 auto;
+    max-width: 100%;
 }
+
+.gallery .page-header 
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/** blog post styles */
 
 .content .pagination {
     width: 100%;
@@ -270,6 +286,48 @@ a.toggle {
     margin-top: 20px;
 }
 
+/** download page styles */
+.download .col-md-6 {
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+.download .jumbotron 
+{
+    color: #fff;
+    background: url(/assets/images/layout/background-download.jpg) no-repeat 0 0;
+    background-size: cover;
+    text-shadow: 0px 0px 3px #000;
+}
+
+.download .jumbotron a.btn
+{
+    width: 250px;
+}
+
+.download #mgdf 
+{   
+    color:#fff;
+    margin-right: 20px;
+    margin-left: 20px;
+    background: #151515;
+}
+
+.download #mgdf .content
+{
+    padding: 20px;
+    margin-top: -60px;
+}
+
+.download #notify
+{
+    margin: 0px 20px 20px 20px;
+}
+
+.download #notify form {
+    margin-bottom: 20px;
+}
+
 /** bootstrap overrides */
 .page-header
 {
@@ -280,4 +338,8 @@ a.toggle {
 .page-header h3
 {
 	line-height:20px;
+}
+
+.label {
+    font-weight: normal;
 }

@@ -1,0 +1,39 @@
+{
+    "images": [
+    {
+        "title": "Gas planet with rings",
+        "description": "A procedurally generated planet similar to saturn",
+        "url": "/assets/images/gallery/7uNFuZHlBU2IZxChD3mOYQ_fullsize.jpg"
+    },
+    {
+        "title": "Asteroid",
+        "description": "A procedurally generated asteroid rendered with displacement mapping",
+        "url": "/assets/images/gallery/vnG5uB98DE6nLiygzAUH4w_fullsize.jpg"
+    },
+    {
+        "title": "Earthlike Planet",
+        "description": "A procedurally generated planet resembling earth with oceans, an atmosphere and clouds.",
+        "url": "/assets/images/gallery/vCk52MOzU2_tlckiXV8xw_fullsize.jpg"
+    },
+    {
+        "title": "Asteroids",
+        "description": "A procedurally generated asteroid field",
+        "url": "/assets/images/gallery/lNReQeEFVki_aWjt8uTQYA_fullsize.jpg"
+    },
+    {
+        "title": "Procedural starfields",
+        "description": "A procedurally generated starfield created using a physical simulation",
+        "url": "/assets/images/gallery/FlddtAtFbk68lCWWcf2MMw_fullsize.jpg"
+    },
+    {
+        "title": "Sunrise",
+        "description": "Showing off the atmospheric scattering and crepuscular ray shaders in a dramatic sunrise shot.",
+        "url": "/assets/images/gallery/yXCiWK0FGE-zkJA8BdnDZw_fullsize.jpg"
+    },
+    {
+        "title": "Rocky planet",
+        "description": "A procedurally generated planet with a similar appearance to mars",
+        "url": "/assets/images/gallery/BHhGHebejUiWhJQ_FlJhhw_fullsize.jpg"
+    }
+    ]
+}

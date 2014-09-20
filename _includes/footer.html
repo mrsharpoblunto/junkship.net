@@ -1,7 +1,8 @@
+    </section>
     <div class="row">
         <div class="span12">
             <div id="footer">
-                <p class="copyright">Disclaimer: Any software provided is provided "as-is." You bear the risk of using it. I give no express warranties, guarantees or conditions in regards to the use of this software. Copyright &copy; Glenn Conner 2014</p>              
+                <p class="copyright">Junkship.net &copy; 2014 <a href="http://www.sharpoblunto.com">Glenn Conner</a>, Luke Smith, and other contributors.</p>              
             </div>
         </div>
     </div>
@@ -16,6 +17,23 @@
     {
         $.each(q,function(i,f){$(f)});
     }
+</script>
+<script type="text/javascript">
+    var planets = document.getElementById('planets');
+    var asteroids = document.getElementById('asteroids');
+    asteroids.style.height = $(document).height()+'px';
+    var scroll = window.requestAnimationFrame ||
+                 window.webkitRequestAnimationFrame ||
+                 window.mozRequestAnimationFrame ||
+                 window.msRequestAnimationFrame ||
+                 window.oRequestAnimationFrame;
+                                                        
+    function loop(){
+        planets.style.transform = 'translate3d(0px,' + (window.pageYOffset * -0.01)+'px,0px)';
+        asteroids.style.transform = 'translate3d(0px,' + (window.pageYOffset * -0.1)+'px,0px)';
+        scroll(loop);
+    }
+    scroll(loop);
 </script>
 <script type="text/javascript">
     //<![CDATA[

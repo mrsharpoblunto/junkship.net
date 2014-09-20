@@ -4,15 +4,11 @@ redirect_from: /News/index.html
 ---
 
 <div class="row">
-    <div class="span8">
-        <div id="twitter" class="hidden-phone">
-            <p>Fetching latest tweet...</p>
-        </div>
-
+    <div class="col-md-9">
         <div class="content">
         {% for post in paginator.posts %}
             <div class="post">
-            <h4><a href="{{ post.url | remove: '.html' }}">{{ post.title }}</a></h4>
+            <h3><a href="{{ post.url | remove: '.html' }}">{{ post.title }}</a></h3>
             <h6>Posted on {{ post.date | date: "%b %-d, %Y" }}
                 {% for tag in post.tags %}
                     <span class="label label-info">{{ tag }}</span>
@@ -53,7 +49,7 @@ redirect_from: /News/index.html
         {% endif %}
         </div>
     </div>
-    <div class="span4">
+    <div class="col-md-3">
         {% include archive.html %}
     </div>
 </div>
@@ -68,19 +64,4 @@ var disqus_shortname = 'junkship'; // required: replace example with your forum 
  s.src = '//' + disqus_shortname + '.disqus.com/count.js';
  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
  }());
-</script>
-<script type="text/javascript">
-    $(function() {
-        $.get('http://api.sharpoblunto.com/twitter',function(tweet) {
-            var html = '<scri'+'pt>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</scri'+'pt>';
-            html += '<a class="twitteruser" href="http://www.twitter.com/' + tweet.ScreenName + '"><img src="' + tweet.Avatar + '" alt="'+ tweet.Name + '" />';
-            html += '<span class="twittername">'+tweet.Name + '</span><span class="twitterscreenname">@'+tweet.ScreenName+'</span></a>';
-            html += '<a data-show-count="false" data-show-screen-name="false" class="twitter-follow-button" href="https://twitter.com/' + tweet.ScreenName + '">Follow</a>';
-            html += '<p class="tweet">'+ tweet.Text + '</p>';
-            html += '<a class="twitterdate" href="https://twitter.com/'+tweet.ScreenName+'/status/'+tweet.Id+'">'+tweet.Date+'</a>';
-            html += '<span class="twitteractions"><a href="https://twitter.com/intent/tweet?in_reply_to=' + tweet.Id + '"><i class="reply"/>Reply</a><a href="https://twitter.com/intent/retweet?tweet_id='+tweet.Id+'"><i class="retweet" />Retweet</a><a href="https://twitter.com/intent/favorite?tweet_id=' + tweet.Id + '"><i class="favorite" />Favorite<a/></span>';
-            html += '</div>';
-            $("#twitter").html(html);
-        },'json');
-    });
 </script>

@@ -4,9 +4,9 @@
   <body>
     {% include header.html %}
     <div class="row">
-        <div class="span8">
+        <div class="col-md-9">
             <div class="post content">
-                <h4><a href="{{ page.url | remove: '.html' }}">{{ page.title }}</a></h4>
+                <h3><a href="{{ page.url | remove: '.html' }}">{{ page.title }}</a></h3>
                 <h6>Posted on {{ page.date | date: "%b %-d, %Y" }}
                     {% for tag in page.tags %}
                         <span class="label label-info">{{ tag }}</span>
@@ -33,7 +33,7 @@
 
             </div>
         </div>
-        <div class="span4">
+        <div class="col-md-3">
             {% include archive.html %}
         </div>
     </div>

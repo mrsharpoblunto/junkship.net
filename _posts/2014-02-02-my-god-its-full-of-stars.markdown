@@ -114,7 +114,9 @@ It took me quite a while to figure out a solution for how to smooth out the part
 
 This got me thinking, could I use vertex shading to try and smooth out the rendered cloud? I started by normalizing all the particle positions so they sat somewhere on a bounding sphere with a radius of 1 unit. Then for each vertex on that sphere I summed up the number of particles within a certain distance and recorded that as the particle density at that vertex. 
 
-![vis](/assets/images/news/KVD-ufxZN0C51L1fLoRaVA.jpg "vis")For example, in this image we can see that the vertex at the center of the red circle has a density of 1 as there is only one particle within the circles radius, whereas the blue vertex has a density of 4 as there are 4 nearby particles
+![vis](/assets/images/news/KVD-ufxZN0C51L1fLoRaVA.jpg "vis")
+
+For example, in this image we can see that the vertex at the center of the red circle has a density of 1 as there is only one particle within the circles radius, whereas the blue vertex has a density of 4 as there are 4 nearby particles
 
 The pixel shader can then render color based on this density, which the graphics card hardware will interpolate for us between the respective vertices for a smooth continuous output. Throwing all these ideas together gave me the following vertex shader (the pixel shader is trivial, it just renders a color whose opacity is based on the vertex.Intensity value and uses the normalized vertex.Velocity vector to lerp between two possible color values )
 

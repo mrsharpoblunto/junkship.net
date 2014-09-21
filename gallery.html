@@ -6,7 +6,7 @@ title: Junkship - Gallery
 
 <div class="row">
     <div class="col-md-12 gallery">
-        <div class="page-header">
+        <div class="page-header hidden-sm hidden-xs">
         <h1>Screenshots gallery <small>Screenshots of the game in various states of development</small></h1>
         </div>
 
@@ -33,7 +33,7 @@ title: Junkship - Gallery
                     <img src="{{ i.url }}" alt="{{ i.title }}" />
                     <div class="carousel-caption">
                         <h3>{{ i.title }}</h3>
-                        <p>{{ i.description }}</p>
+                        <p class="hidden-xs">{{ i.description }}</p>
                     </div>
                 </div>
                 {% endfor %}

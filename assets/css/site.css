@@ -42,7 +42,7 @@ section
     background: #222;
     color: #fff;
     text-shadow: 0px 0px 2px #000;
-    padding: 5px 0px 5px 20px;
+    padding: 5px 5px 5px 20px;
 }
 
 #stars
@@ -124,7 +124,7 @@ section
     width: 268px;
     height: 71px;
     margin-top: 7px;
-    margin-left: 10px;
+    margin-left: 20px;
     background-size: cover;
     text-indent: -9999px;
 }
@@ -302,7 +302,8 @@ a.toggle {
 
 .download .jumbotron a.btn
 {
-    width: 250px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .download #mgdf 

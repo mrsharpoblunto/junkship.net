@@ -11,7 +11,7 @@ title: Junkship - Download
         <div class="jumbotron">
             <h1>Download the technology preview</h1>
             <p>Junkship is still under development, but you can download an early technology preview to play around with. You will need a Windows 7 or newer operating system with a DirectX 11 compatible GPU to run the preview.</p>
-            <p class="text-center"><a class="btn btn-primary btn-lg" role="button" onclick="var that=this;_gaq.push(['_trackEvent','Download','Tech preview',this.href]);setTimeout(function(){location.href=that.href;},200);return false;" href="https://s3.amazonaws.com/junkship.net/JunkshipSetup.exe"><span class="glyphicon glyphicon-cloud-download"></span> Download</a></p>
+            <p class="text-center"><a class="btn btn-primary btn-lg" role="button" onclick="var that=this;_gaq.push(['_trackEvent','Download','Tech preview',this.href]);setTimeout(function(){location.href=that.href;},200);return false;" href="https://s3.junkship.net/JunkshipSetup.exe"><span class="glyphicon glyphicon-cloud-download"></span> Download</a></p>
         </div>
         </div>
 
@@ -51,7 +51,7 @@ title: Junkship - Download
                     $('#email').parent().addClass('has-error');
                 } else {
                     $.ajax({ 
-                    url: 'http://api.junkship.net/notify',
+                    url: 'https://api.junkship.net/notify',
                     type: 'POST',
                     contentType: 'application/json',
                     dataType: 'json',

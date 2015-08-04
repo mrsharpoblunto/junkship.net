@@ -273,17 +273,13 @@ a.toggle {
 }
 
 /** download page styles */
-.download .col-md-6 {
-    margin-top: -30px;
-    margin-bottom: 20px;
-}
-
 .download .jumbotron 
 {
     color: #fff;
     background: url(/assets/images/layout/background-download.jpg) no-repeat 0 0;
     background-size: cover;
     text-shadow: 0px 0px 3px #000;
+	margin-bottom: 0px;
 }
 
 .download .jumbotron a.btn
@@ -302,16 +298,22 @@ a.toggle {
 
 .download #mgdf .content
 {
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
+	margin-bottom: 20px;
 }
 
 .download #notify
 {
-    margin: 0px 20px 20px 20px;
+    margin: 0px 20px 0px 20px;
+	padding-bottom: 0px;
 }
 
 .download #notify form {
     margin-bottom: 20px;
+}
+
+.download .jumbotron p {
+	margin-bottom: 30px;
 }
 
 /** bootstrap overrides */

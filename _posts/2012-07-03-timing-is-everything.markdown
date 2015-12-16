@@ -7,7 +7,7 @@ tags:
 - programming
 ---
 
-![02-07-2012](http://www.junkship.net/Resources/News/rq69DnxxPkKB9MhX7-1f6g.jpg)
+![02-07-2012](/assets/images/news/rq69DnxxPkKB9MhX7-1f6g.jpg)
 
 According to [Donald Knuth](http://en.wikipedia.org/wiki/Donald_Knuth) 
 

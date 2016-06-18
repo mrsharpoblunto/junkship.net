@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Jupiter Jazz"
-date: 2014-02-02 07:02:53
+date: 2016-06-09 10:02:53
+redirect_from: /News/2014/02/02/jupiter-jazz
 tags:
 - graphics
 - programming

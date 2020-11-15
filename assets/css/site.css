@@ -37,7 +37,7 @@ section
     height: 100%;
     position: fixed;
     background-size: cover;
-    background: url(/assets/images/layout/background-stars.jpg);
+    background-image: url(/assets/images/layout/background-stars.jpg);
     z-index: -3;
     top:0px;
 }

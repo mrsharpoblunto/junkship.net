@@ -7,11 +7,11 @@
         <div class="col-md-9">
             <div class="post content">
                 <h3><a href="{{ page.url | remove: '.html' }}">{{ page.title }}</a></h3>
-                <h6>Posted on {{ page.date | date: "%b %-d, %Y" }}
+                <p class="font-weight-light text-muted">Posted on {{ page.date | date: "%b %-d, %Y" }}
                     {% for tag in page.tags %}
-                        <span class="label label-info">{{ tag }}</span>
+                        <span class="badge badge-light">{{ tag }}</span>
                     {% endfor %}
-                </h6>
+                </p>
                 <div class="post-content">
                     {{ content }}
                 </div>

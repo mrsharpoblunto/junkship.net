@@ -45,11 +45,11 @@ My solution to this was to split things into 2 stages - the first is the iterati
 
 The second stage still involves the use of the flow map to warp the input texture, but importantly the output is not used as the input to the next frame (to prevent excessive mixing over time). Instead, the same input texture is used on each frame, and the flow map is rotated by a fixed amount. This gives the appearance of some dynamic fluidity when rendering, but ensures that the appearance of the texture remains consistent over long periods of time.
 
-### Gas giants: Old technique vs New technique
+#### Gas giants: Old technique vs New technique
 
 ![image](/assets/images/news/old-vs-new-gas-planet.jpg)
 
-### Clouds: Old technique vs New technique
+#### Clouds: Old technique vs New technique
 
 ![image](/assets/images/news/old-vs-new-clouds.jpg)
 

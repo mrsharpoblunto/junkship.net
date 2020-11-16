@@ -1,13 +1,13 @@
 {
     "images": [
     {
-        "title": "Gas planet with rings",
-        "description": "A procedurally generated planet similar to saturn",
+        "title": "Planet with rings",
+        "description": "A procedurally generated planet with rings & a debris field",
         "url": "/assets/images/gallery/7uNFuZHlBU2IZxChD3mOYQ_fullsize.jpg"
     },
     {
-        "title": "Asteroid",
-        "description": "A procedurally generated asteroid rendered with displacement mapping",
+        "title": "Asteroids",
+        "description": "Procedurally generated asteroids rendered with displacement mapping",
         "url": "/assets/images/gallery/vnG5uB98DE6nLiygzAUH4w_fullsize.jpg"
     },
     {
@@ -16,8 +16,13 @@
         "url": "/assets/images/gallery/vCk52MOzU2_tlckiXV8xw_fullsize.jpg"
     },
     {
-        "title": "Asteroids",
-        "description": "A procedurally generated asteroid field",
+        "title": "Fluid cloud simulation",
+        "description": "Raymarched and fluid simulated planetary clouds",
+        "url": "/assets/images/gallery/red-clouds.jpg"
+    },
+    {
+        "title": "Rings & Asteroids",
+        "description": "Procedurally generated rings & asteroids",
         "url": "/assets/images/gallery/lNReQeEFVki_aWjt8uTQYA_fullsize.jpg"
     },
     {
@@ -26,8 +31,13 @@
         "url": "/assets/images/gallery/FlddtAtFbk68lCWWcf2MMw_fullsize.jpg"
     },
     {
+        "title": "Rings & Shadows",
+        "description": "Volumetric rings with asteroids showing raymarched shadows",
+        "url": "/assets/images/gallery/ring-shadows.jpg"
+    },
+    {
         "title": "Sunrise",
-        "description": "Showing off the atmospheric scattering and crepuscular ray shaders in a dramatic sunrise shot.",
+        "description": "Showing off the atmospheric scattering and crepuscular ray shaders",
         "url": "/assets/images/gallery/yXCiWK0FGE-zkJA8BdnDZw_fullsize.jpg"
     },
     {

@@ -74,7 +74,7 @@ section
     box-shadow: none;
     border: none;
     background-color: rgba(0,0,0,0.7);
-    align-items:end;
+    align-items:flex-end;
 }
 
 .navbar-brand {

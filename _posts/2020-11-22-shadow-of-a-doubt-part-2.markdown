@@ -23,38 +23,17 @@ You might have noticed that for a perspective shadow map in the diagram above th
 ###### Stable shadows by snapping frustum movement to shadow map texel positions
 ![Stable shadows](/assets/images/news/swimming-fixed.gif)
 
-I've extracted the approximate code I use to do this center correction below. The three main steps are:
-
-1. scaling the new center so its the same distance from the light source as the old center.
-2. projecting it into shadow map space to snap it to whole x&y values.
-3. reprojecting it back into world space.
-4. re-scaling it so its as far away from the light source as the original uncorrected center.
+I've extracted the approximate code I use to do this center correction below. The way it works is to project the new center using the previous view-projection matrix, which transforms the x & y coordinates to positions on the shadow map. We then round those x & y coordinates to the nearest texel boundary, then run the projection in reverse (using the inverse of the view-projection matrix) to convert the corrected center back into world space.
 
 {% highlight c++ %}
 constexpr float TexelScale = 2.0f / 1024; // shadow map resolution of 1024px
 constexpr float InvTexelScale = 1.0f / TexelScale;
 
-const XMVECTOR newLightDirectionCenter = center - lightPosition;
-const XMVECTOR prevLightDirectionCenter =
-  previousCenter - lightPosition;
-
-const float newLightDistance =
-  XMVectorGetX(XMVector3Length(newLightDirectionCenter));
-const float prevLightDistance =
-  XMVectorGetX(XMVector3Length(prevLightDirectionCenter));
-
-// move the new center back to the vector normal to the previous position
-// (i.e. the plane on which the shadow map is projected so we can see
-// where it fits with the previous texel scaling
-XMVECTOR scaledNewLightCenter =
-  XMVectorScale(center, prevLightDistance / newLightDistance);
-scaledNewLightCenter = XMVectorSetW(scaledNewLightCenter, 1.0f);
-
 // project the new center using the previous projection & snap its
 // position to a whole texel value, before re-projecting back into world
 // space
 const XMVECTOR projectedCenter = XMVector4Transform(
-  scaledNewLightCenter, cascadeViewProjection);
+  XMVectorSetW(center, 1.0f), cascadeViewProjection);
 const float w = XMVectorGetW(projectedCenter);
 const float x = floor((XMVectorGetX(projectedCenter) / w) *
   InvTexelScale) * TexelScale;
@@ -64,13 +43,6 @@ const float z = XMVectorGetZ(projectedCenter) / w;
 XMVECTOR correctedCenter = XMVector4Transform(
   XMVectorSet(x, y, z, 1.0f),
   XMMatrixInverse(nullptr, cascadeViewProjection));
-correctedCenter =
-  XMVectorScale(correctedCenter, 1.0f / XMVectorGetW(correctedCenter));
-
-// then scale the corrected center out so that its the same distance from
-// the light as the original uncorrected center
 center =
-  lightPosition +
-  XMVectorScale(XMVector3Normalize(correctedCenter - lightPosition),
-    newLightDistance);
+  XMVectorScale(correctedCenter, 1.0f / XMVectorGetW(correctedCenter));
 {% endhighlight %}

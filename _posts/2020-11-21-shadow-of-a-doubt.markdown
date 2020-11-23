@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Shadow of a doubt"
+title: "Shadow of a doubt - part 1"
 date: 2020-11-21 10:54:00
 tags:
 - graphics

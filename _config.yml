@@ -10,7 +10,7 @@ github_username:  mrsharpoblunto
 permalink: /News/:year/:month/:day/:title.html
 paginate: 5 
 paginate_path: "/page:num"
-setupversion: "0.4.1"
+setupversion: "0.5.0"
 timezone: UTC
 plugins: 
   - jekyll-redirect-from
